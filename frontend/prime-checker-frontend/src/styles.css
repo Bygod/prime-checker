@@ -2,3 +2,37 @@
   text-align: center;
 }
 
+body {
+  background-image: radial-gradient(#6eadff, #000000dd);
+}
+
+.Form {
+  margin-top: 40%;
+}
+
+.Form input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+.Form input::placeholder {
+  color: black;
+}
+
+.Form button {
+  padding: 6px;
+  margin-left: 10px;
+}
+
+
+p.Error {
+  color: #ff4f4f;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+}
+
+@media screen and (min-width: 1000px) {
+  .Form {
+    margin-top: 400px;
+  }
+}

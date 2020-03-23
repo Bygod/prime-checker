@@ -46,10 +46,10 @@ class Form extends React.Component {
                         onChange={this.handleValueChange}
                         placeholder="Número"
                     />
-                    <button className="submitButton"> Dividir </button>
+                    <button><b> Dividir </b></button>
                     <ToggleMessage 
                         show={this.state.error}
-                        color="red"
+                        type="Error"
                         message="Por favor, insira um número inteiro e positivo"
                     />
                 </form>
