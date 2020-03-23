@@ -33,6 +33,9 @@ class Form extends React.Component {
             .then((response) => {
                 console.log(response);
             })
+            .catch((error) => {
+                console.log(error);
+            })
         } else {
             this.setState({
                 error: true
