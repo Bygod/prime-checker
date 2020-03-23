@@ -4,11 +4,11 @@ const server = express()
 const checker = require("./primeChecker")
 
 
-server.use(express.static(path.join(__dirname, '../frontend/prime-checker-frontend/build')))
+server.use(express.static(path.join(__dirname, 'build')))
 server.use(express.json())
 
 server.get("/", function(req, res) {
-    return path.join(__dirname, '../frontend/prime-checker-frontend/build', 'index.html')
+    return path.join(__dirname, 'build', 'index.html')
 })
 
 
