@@ -1,5 +1,6 @@
 import React from 'react'
 import ToggleMessage from './ToggleMessage'
+import Answer from './Answer'
 import axios from 'axios'
 
 class Form extends React.Component {
@@ -9,7 +10,10 @@ class Form extends React.Component {
 
         this.state = {
             value: '',
-            error: false
+            error: false,
+            lastValue: '',
+            divisors: [],
+            prime: ''
         }
 
     }
@@ -26,12 +30,16 @@ class Form extends React.Component {
         if (Number.isInteger(n) &&  n  > 0) {
             this.setState({
                 value: n,
-                error: false
+                error: false,
+                lastValue: n
             })
             
             axios.post("/", {value: n})
             .then((response) => {
-                console.log(response);
+                this.setState({
+                    divisors: response.data.divisors,
+                    prime: response.data.prime
+                })
             })
             .catch((error) => {
                 console.log(error);
@@ -62,6 +70,10 @@ class Form extends React.Component {
                         message="Por favor, insira um número inteiro e positivo"
                     />
                 </form>
+                <Answer
+                    value={this.state.lastValue}
+                    divisors={this.state.divisors}
+                    prime={this.state.prime}/>
             </div>
         )
     }

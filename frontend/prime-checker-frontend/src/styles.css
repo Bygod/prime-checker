@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: radial-gradient(#6eadff, #000000dd);
+  background-color: #44a4db;
 }
 
 .Form {
@@ -12,6 +12,7 @@ body {
 
 .Form input {
   padding: 5px;
+  width: 70px;
   border: none;
   border-radius: 5px;
   background-color: lightgray;
@@ -25,6 +26,24 @@ body {
   margin-left: 10px;
 }
 
+.Answer {
+  margin-top: 20px;
+  color:white;
+}
+
+.Answer ul {
+  margin-top: 50px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.prime {
+  color: lightgreen
+}
+.notprime {
+  color: #ffff00dd
+}
 
 p.Error {
   color: #ff4f4f;
