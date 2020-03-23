@@ -1,5 +1,6 @@
 import React from 'react'
 import ToggleMessage from './ToggleMessage'
+import axios from 'axios'
 
 class Form extends React.Component {
 
@@ -27,17 +28,22 @@ class Form extends React.Component {
                 value: n,
                 error: false
             })
+            
+            axios.post("/", {value: n})
+            .then((response) => {
+                console.log(response);
+            })
         } else {
             this.setState({
                 error: true
             })
         }
 
+
         event.preventDefault()
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="Form">
                 <form onSubmit={this.handleSubmit}>
